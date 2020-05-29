@@ -2,13 +2,24 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0aa15b5c-cd6e-4f1c-a456-5bc9ae86c1c8" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/test/java/com/udemy/test/TestBase.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/udemy/test/LoginTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/udemy/test/LoginTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/udemy/test/RegistrationTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/udemy/test/RegistrationTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/com/udemy/test/RegistrationTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/com/udemy/test/RegistrationTest.class" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -57,6 +68,24 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="LoginTest.loginWithValidCredentials (1)" type="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="com.udemy.test" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.udemy.test.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.udemy.test" />
+      <option name="MAIN_CLASS_NAME" value="com.udemy.test.LoginTest" />
+      <option name="METHOD_NAME" value="loginWithValidCredentials" />
+      <option name="TEST_OBJECT" value="METHOD" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="LoginTest.loginWithValidCredentials" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="com.udemy.test" />
       <extension name="coverage">
@@ -92,11 +121,31 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="RegistrationTest.registrationNewUser" type="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="com.udemy.test" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.udemy.test.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.udemy.test" />
+      <option name="MAIN_CLASS_NAME" value="com.udemy.test.RegistrationTest" />
+      <option name="METHOD_NAME" value="registrationNewUser" />
+      <option name="TEST_OBJECT" value="METHOD" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
         <item itemvalue="TestNG.LoginTest.loginWithValidCredentials" />
         <item itemvalue="TestNG.LoginTest" />
+        <item itemvalue="TestNG.LoginTest.loginWithValidCredentials (1)" />
         <item itemvalue="TestNG.RegistrationTest" />
+        <item itemvalue="TestNG.RegistrationTest.registrationNewUser" />
       </list>
     </recent_temporary>
   </component>
@@ -118,7 +167,9 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
           </value>
         </entry>
       </map>

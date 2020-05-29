@@ -1,80 +1,72 @@
 package com.udemy.test;
 
 import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.Cookie;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.chrome.ChromeDriverService;
-import org.openqa.selenium.remote.DesiredCapabilities;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
 import java.io.File;
 
 
-public class LoginTest {
+public class LoginTest extends TestBase {
 
     @Test(description = "Login with valid credential")
     public void loginWithValidCredentials() throws InterruptedException {
-        File chromeDriver = new File("src/main/resources/chromedriver");
-        ChromeDriverService chromeService = new ChromeDriverService.Builder()
-                .usingDriverExecutable(chromeDriver)
-                .usingAnyFreePort()
-                .build();
-
-
-        WebDriver driver = new ChromeDriver(chromeService);
+        By loginPopUpBtnLocator = By.xpath("//button[@class='btn btn-quaternary']");
+        By loginFieldLocator = By.id("email--1");
+        By passwrdFieldLocator = By.id("id_password");
+        By loginBtnLocator = By.id("submit-id-submit");
+        By mycoursesBtnLocator = By.id("header.my-learning");
+        By profileIconLocator = By.xpath("//div[contains(@class,'profile-dropdown')]//div[@class='udlite-heading-md']");
 
         driver.get("https://www.udemy.com/");
 
-        pause(4000);
+        Cookie sessionId = new Cookie ("dj_session_id", "xn3e4c1k09j1qm4umcjbmb0sa9fv55ig");
+        driver.manage().addCookie(sessionId);
 
-        WebElement loginPopUpBtm = driver.findElement(
-                By.xpath("//button[@class='btn btn-quaternary']"));
-        loginPopUpBtm.click();
-        pause(3000);
-        WebElement loginField = driver.findElement(By.id("email--1"));
-        loginField.clear();
-        loginField.sendKeys("sergi.novitskiy@gmail.com");
+        driver.get("https://www.udemy.com/");
+//        wait.until(ExpectedConditions.visibilityOfElementLocated(loginPopUpBtnLocator));
+//
+//        WebElement loginPopUpBtm = driver.findElement(loginPopUpBtnLocator);
+//        loginPopUpBtm.click();
+//
+//        wait.until(ExpectedConditions.visibilityOfElementLocated(loginFieldLocator));
+//
+//        WebElement loginField = driver.findElement(loginFieldLocator);
+//        loginField.clear();
+//        loginField.sendKeys("sergi.novitskiy@gmail.com");
+//
+//
+//        WebElement passwrdField = driver.findElement(passwrdFieldLocator);
+//        passwrdField.clear();
+//        passwrdField.sendKeys("Ukraine79");
+//
+//        wait.until(ExpectedConditions.elementToBeClickable(loginBtnLocator));
+//        WebElement loginBtn = driver.findElement(loginBtnLocator);
+//        loginBtn.click();
 
-        WebElement passwrdField = driver.findElement(By.id("id_password"));
-        passwrdField.clear();
-        passwrdField.sendKeys("Ukraine79");
-
-        pause(3000);
-        WebElement loginBtn = driver.findElement(By.id("submit-id-submit"));
-        loginBtn.click();
-
-
-        pause(4000);
-
-        WebElement profileIcon = driver.findElement(By.xpath("//a[@id='header.profile']//img"));
-
-        Assert.assertEquals(profileIcon.getAttribute("Сергей Новицкий"),"Сергей Новицкий");
-
-
-
-
-
-
-
-
-
+//        wait.until(ExpectedConditions.not(
+//                ExpectedConditions.visibilityOfElementLocated(loginPopUpBtnLocator)));
+//
+////        WebElement mycoursesBtn = driver.findElement(mycoursesBtnLocator);
+////        Assert.assertEquals(mycoursesBtn.getText(), "My courses");
+//
+//        WebElement profileIcon = driver.findElement(profileIconLocator);
+//        Assert.assertEquals(profileIcon.getText(), "Сергей Новицкий");
 
 
-        driver.quit();
+        wait.until(ExpectedConditions.visibilityOfElementLocated(mycoursesBtnLocator));
+
+        WebElement mycoursesBtn = driver.findElement(mycoursesBtnLocator);
+        Assert.assertEquals(mycoursesBtn.getText(), "My courses");
+
 
 
     }
 
 
-        private void pause(int milis){
-        try {
-            Thread.sleep(milis);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
-        }
     }
 
 

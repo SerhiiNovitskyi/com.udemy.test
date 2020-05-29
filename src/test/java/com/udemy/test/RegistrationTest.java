@@ -1,87 +1,62 @@
 package com.udemy.test;
-
 import org.openqa.selenium.By;
-
-import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.chrome.ChromeDriverService;
-import org.openqa.selenium.remote.DesiredCapabilities;
-import org.openqa.selenium.support.ui.Select;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
-import java.io.File;
 
 
-public class RegistrationTest {
+public class RegistrationTest extends TestBase {
 
 
-    @Test(description ="Registration ")
+    @Test(description = "Registration ")
     public void registrationNewUser() throws InterruptedException {
-        File chromeDriver = new File("src/main/resources/chromedriver");
-        ChromeDriverService chromeService = new ChromeDriverService.Builder()
-                .usingDriverExecutable(chromeDriver)
-                .usingAnyFreePort()
-                .build();
+        By registrationBtnLocator = By.xpath("//button[contains(text(),'Sign Up')]");
+        By registerNameFieldLocator = By.id("id_fullname");
+        By registerEmailFieldLocator = By.id("email--1");
+        By registerPasswrdFieldLocator = By.id("password");
+        By registerCheckBoxBtnLocator = By.xpath("//span[@class='checkbox-label']");
+        By registerSubmitBtnLocator = By.id("submit-id-submit");
+        By mycoursesBtnLocator = By.id("header.my-learning");
+//        By profileNameLocator = By.xpath("//span[@class='text-midnight ellipsis']");
 
 
-        WebDriver driver = new ChromeDriver(chromeService);
 
         driver.get("https://www.udemy.com/");
+        wait.until(ExpectedConditions.visibilityOfElementLocated(registrationBtnLocator));
 
-        pause(3000);
-
-        WebElement registerPopUpBtm = driver.findElement(
-                By.xpath("(//button[@class='btn btn-primary'])[1]"));
+        WebElement registerPopUpBtm = driver.findElement(registrationBtnLocator);
         registerPopUpBtm.click();
-        pause(3000);
 
-        WebElement registerName = driver.findElement(
-                By.id("id_fullname"));
+        wait.until(ExpectedConditions.visibilityOfElementLocated(registerNameFieldLocator));
+        WebElement registerName = driver.findElement(registerNameFieldLocator);
         registerName.clear();
         registerName.sendKeys("sergi.novitskiy");
 
-        WebElement registerEmail = driver.findElement(
-                By.id("email--1"));
+        WebElement registerEmail = driver.findElement(registerEmailFieldLocator);
         registerEmail.clear();
-        registerEmail.sendKeys("sergi.novitskiy+7@gmail.com");
+        registerEmail.sendKeys(randomString()+"@gmail.com");
 
-        WebElement registerPassword = driver.findElement(
-                By.id("password"));
+        WebElement registerPassword = driver.findElement(registerPasswrdFieldLocator);
         registerPassword.clear();
-        registerPassword.sendKeys("Ukraine79");
+        registerPassword.sendKeys(randomString());
 
-        WebElement checkboxBtn = driver.findElement(
-                By.xpath("//span[@class='checkbox-label']"));
-
+        WebElement checkboxBtn = driver.findElement(registerCheckBoxBtnLocator);
         checkboxBtn.click();
 
-        WebElement registrationBtn = driver.findElement(
-                By.id("submit-id-submit"));
+        WebElement registrationBtn = driver.findElement(registerSubmitBtnLocator);
+        wait.until(ExpectedConditions.elementToBeClickable(registrationBtnLocator));
         registrationBtn.click();
 
-        pause(4000);
+        wait.until(ExpectedConditions.visibilityOfElementLocated(mycoursesBtnLocator));
 
-        WebElement dropDwnBtn = driver.findElement(
-                By.xpath("//div[contains(@class,'user-dropdown-button hidden')]"));
-        Select select = new Select(dropDwnBtn);
+        WebElement mycoursesBtn = driver.findElement(mycoursesBtnLocator);
+        Assert.assertEquals(mycoursesBtn.getText(), "My courses");
 
-        WebElement profileIcon = driver.findElement(By.xpath("//span[@class='text-midnight ellipsis"));
-
-        Assert.assertEquals(profileIcon.getText(),"Sergi.Novitskiy");
+//        WebElement profileName = driver.findElement(profileNameLocator);
+//        Assert.assertEquals(profileName.getText(), "Sergi.Novitskiy");
 
     }
 
-
-
-
-
-    private void pause(int milis){
-        try {
-            Thread.sleep(milis);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
-    }
 }

@@ -2,11 +2,18 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0aa15b5c-cd6e-4f1c-a456-5bc9ae86c1c8" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/test/java/com/udemy/test/TestBase.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/udemy/pages/HomePage.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/udemy/pages/RegistrationPage.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/udemy/pages/SearchPage.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/com/udemy/test/SearchTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/com/udemy/test/LoginTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/udemy/test/LoginTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/com/udemy/test/RegistrationTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/udemy/test/RegistrationTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/udemy/test/TestBase.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/udemy/test/TestBase.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/chromedriver" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/chromedriver" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/com/udemy/test/LoginTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/com/udemy/test/LoginTest.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/test-classes/com/udemy/test/RegistrationTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/com/udemy/test/RegistrationTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/com/udemy/test/TestBase.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/com/udemy/test/TestBase.class" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -25,8 +32,11 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="ProjectId" id="1cVQKBm0TaXR5SInH2eZxHz4nkn" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="last_directory_selection" value="$PROJECT_DIR$/src/test/java/com/udemy" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.0" />
@@ -50,7 +60,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="TestNG.LoginTest.loginWithValidCredentials">
+  <component name="RunManager" selected="TestNG.SearchTest.searchByUsingH1SearchField">
     <configuration name="LoginTest" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="com.udemy.test" />
       <extension name="coverage">
@@ -62,24 +72,6 @@
       <option name="PACKAGE_NAME" value="com.udemy.test" />
       <option name="MAIN_CLASS_NAME" value="com.udemy.test.LoginTest" />
       <option name="TEST_OBJECT" value="CLASS" />
-      <properties />
-      <listeners />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="LoginTest.loginWithValidCredentials (1)" type="TestNG" temporary="true" nameIsGenerated="true">
-      <module name="com.udemy.test" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.udemy.test.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="com.udemy.test" />
-      <option name="MAIN_CLASS_NAME" value="com.udemy.test.LoginTest" />
-      <option name="METHOD_NAME" value="loginWithValidCredentials" />
-      <option name="TEST_OBJECT" value="METHOD" />
       <properties />
       <listeners />
       <method v="2">
@@ -104,23 +96,6 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="RegistrationTest" type="TestNG" temporary="true" nameIsGenerated="true">
-      <module name="com.udemy.test" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.udemy.test.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="com.udemy.test" />
-      <option name="MAIN_CLASS_NAME" value="com.udemy.test.RegistrationTest" />
-      <option name="TEST_OBJECT" value="CLASS" />
-      <properties />
-      <listeners />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="RegistrationTest.registrationNewUser" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="com.udemy.test" />
       <extension name="coverage">
@@ -139,13 +114,49 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="SearchTest.loginWithValidCredentials" type="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="com.udemy.test" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.udemy.test.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.udemy.test" />
+      <option name="MAIN_CLASS_NAME" value="com.udemy.test.SearchTest" />
+      <option name="METHOD_NAME" value="loginWithValidCredentials" />
+      <option name="TEST_OBJECT" value="METHOD" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="SearchTest.searchByUsingH1SearchField" type="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="com.udemy.test" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.udemy.test.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.udemy.test" />
+      <option name="MAIN_CLASS_NAME" value="com.udemy.test.SearchTest" />
+      <option name="METHOD_NAME" value="searchByUsingH1SearchField" />
+      <option name="TEST_OBJECT" value="METHOD" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="TestNG.SearchTest.searchByUsingH1SearchField" />
+        <item itemvalue="TestNG.RegistrationTest.registrationNewUser" />
+        <item itemvalue="TestNG.SearchTest.loginWithValidCredentials" />
         <item itemvalue="TestNG.LoginTest.loginWithValidCredentials" />
         <item itemvalue="TestNG.LoginTest" />
-        <item itemvalue="TestNG.LoginTest.loginWithValidCredentials (1)" />
-        <item itemvalue="TestNG.RegistrationTest" />
-        <item itemvalue="TestNG.RegistrationTest.registrationNewUser" />
       </list>
     </recent_temporary>
   </component>
@@ -174,5 +185,8 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
   </component>
 </project>

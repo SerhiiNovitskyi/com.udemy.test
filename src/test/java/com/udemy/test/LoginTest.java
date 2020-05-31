@@ -7,26 +7,23 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
-import java.io.File;
 
 
 public class LoginTest extends TestBase {
 
     @Test(description = "Login with valid credential")
-    public void loginWithValidCredentials() throws InterruptedException {
-        By loginPopUpBtnLocator = By.xpath("//button[@class='btn btn-quaternary']");
-        By loginFieldLocator = By.id("email--1");
-        By passwrdFieldLocator = By.id("id_password");
-        By loginBtnLocator = By.id("submit-id-submit");
-        By mycoursesBtnLocator = By.id("header.my-learning");
-        By profileIconLocator = By.xpath("//div[contains(@class,'profile-dropdown')]//div[@class='udlite-heading-md']");
+    public void loginWithValidCredentials()  {
 
-        driver.get("https://www.udemy.com/");
+        homePage.openHomePage();
+        homePage.loginUsingCoockies();
+        homePage.openHomePage();
+        homePage.getMycoursesButton();
+        Assert.assertEquals(homePage.getMycoursesButton(), "My courses");
 
-        Cookie sessionId = new Cookie ("dj_session_id", "xn3e4c1k09j1qm4umcjbmb0sa9fv55ig");
-        driver.manage().addCookie(sessionId);
 
-        driver.get("https://www.udemy.com/");
+
+
+
 //        wait.until(ExpectedConditions.visibilityOfElementLocated(loginPopUpBtnLocator));
 //
 //        WebElement loginPopUpBtm = driver.findElement(loginPopUpBtnLocator);
@@ -55,12 +52,6 @@ public class LoginTest extends TestBase {
 //
 //        WebElement profileIcon = driver.findElement(profileIconLocator);
 //        Assert.assertEquals(profileIcon.getText(), "Сергей Новицкий");
-
-
-        wait.until(ExpectedConditions.visibilityOfElementLocated(mycoursesBtnLocator));
-
-        WebElement mycoursesBtn = driver.findElement(mycoursesBtnLocator);
-        Assert.assertEquals(mycoursesBtn.getText(), "My courses");
 
 
 

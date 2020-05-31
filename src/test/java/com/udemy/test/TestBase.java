@@ -1,5 +1,8 @@
 package com.udemy.test;
 
+import com.udemy.pages.HomePage;
+import com.udemy.pages.RegistrationPage;
+import com.udemy.pages.SearchPage;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeDriverService;
@@ -14,6 +17,9 @@ public class TestBase {
 
     WebDriver driver;
     WebDriverWait wait;
+    HomePage homePage;
+    RegistrationPage registrationPage;
+    SearchPage searchPage;
 
     @BeforeMethod (description = "Open Brower")
     public void openBrowser() {
@@ -24,23 +30,15 @@ public class TestBase {
                 .build();
 
         driver = new ChromeDriver(chromeService);
-        wait = new WebDriverWait(driver, 9);
+        wait = new WebDriverWait(driver, 15);
+        homePage = new HomePage(driver, wait);
+        registrationPage = new RegistrationPage(driver, wait);
+        searchPage = new SearchPage(driver,wait);
     }
 
-    protected String randomString() {
-        String SALTCHARS = "ABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890";
-        StringBuilder salt = new StringBuilder();
-        Random rnd = new Random();
-        while (salt.length() < 10) {
-            int index = (int) (rnd.nextFloat() * SALTCHARS.length());
-            salt.append(SALTCHARS.charAt(index));
-        }
-        String rndmStr = salt.toString();
-        return rndmStr;
 
-    }
     @AfterMethod (description = "Close browser")
     public void closeBrowser() {
-        driver.quit();
+//        driver.quit();
     }
 }
